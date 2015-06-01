@@ -6,7 +6,7 @@ Lists keys currently listed in memcache, based on [this gist](https://gist.githu
 
 Open your terminal and run
 
-    memkeys list_keys -h localhost
+    memkeys 
 
 The output should look like:
 
@@ -22,3 +22,8 @@ The output should look like:
 
     gem build memkeys.gemspec 
     gem install memkeys-0.0.0.gem
+
+## Thanks
+
+Big thanks to [Ruby Co-Learning](http://www.meetup.com/opentechschool-berlin/events/219762691/), 
+Jose Pio [github](http://www.github.com/josetonyp)
