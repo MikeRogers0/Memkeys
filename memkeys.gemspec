@@ -16,4 +16,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.executables  = ["memkeys"]  
   s.files        = `git ls-files`.split($\)
+
+  s.add_runtime_dependency "thor"
 end

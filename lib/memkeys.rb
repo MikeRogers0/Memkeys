@@ -1,7 +1,13 @@
 require 'net/telnet'
+require 'thor'
 
-class Memkeys
-  def self.list_keys
+class Memkeys < Thor
+
+  desc "List Keys", "List Keys"
+  method_option :host, :aliases => "-h", :desc => "Specify a host"
+  def list_keys
+    puts options[:host].inspect
+
     headings = %w(id expires bytes cache_key)
     rows = []
 
@@ -23,15 +29,16 @@ class Memkeys
     localhost.close
   end
 
-  def self.localhost
+  private
+  def localhost
     @localhost ||= Net::Telnet::new("Host" => "localhost", "Port" => 11211, "Timeout" => 3)
   end
 
-  def self.slabs
+  def slabs
     matches.inject([]) { |items, item| items << Hash[*['id','items'].zip(item).flatten]; items }
   end
 
-  def self.matches
+  def matches
     localhost.cmd("String" => "stats items", "Match" => /^END/).scan(/STAT items:(\d+):number (\d+)/)
   end
 end

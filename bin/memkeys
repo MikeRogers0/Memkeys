@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'memkeys'
-Memkeys.list_keys
+require_relative '../lib/memkeys'
+
+Memkeys.start(ARGV)
