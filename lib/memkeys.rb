@@ -6,6 +6,7 @@ class Memkeys < Thor
   desc "List Keys", "List Keys"
   method_option :host, :aliases => "-h", :desc => "Specify a host"
   def list_keys
+    options = default_options.merge(options || {})
     puts options[:host].inspect
 
     headings = %w(id expires bytes cache_key)
@@ -28,8 +29,13 @@ class Memkeys < Thor
 
     localhost.close
   end
+  default_task :list_keys
 
   private
+  def default_options
+    { host: "localhost" } 
+  end
+
   def localhost
     @localhost ||= Net::Telnet::new("Host" => "localhost", "Port" => 11211, "Timeout" => 3)
   end

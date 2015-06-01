@@ -6,7 +6,7 @@ Lists keys currently listed in memcache, based on [this gist](https://gist.githu
 
 Open your terminal and run
 
-    memkeys
+    memkeys list_keys -h localhost
 
 The output should look like:
 
