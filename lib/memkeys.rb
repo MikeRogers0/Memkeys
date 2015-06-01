@@ -5,11 +5,6 @@ class Memkeys
     headings = %w(id expires bytes cache_key)
     rows = []
 
-    localhost = Net::Telnet::new("Host" => "localhost", "Port" => 11211, "Timeout" => 3)
-    matches   = localhost.cmd("String" => "stats items", "Match" => /^END/).scan(/STAT items:(\d+):number (\d+)/)
-
-    slabs = matches.inject([]) { |items, item| items << Hash[*['id','items'].zip(item).flatten]; items }
-
     longest_key_len = 0
     slabs.each do |slab|
       localhost.cmd("String" => "stats cachedump #{slab['id']} #{slab['items']}", "Match" => /^END/) do |c|
@@ -26,5 +21,17 @@ class Memkeys
     rows.each{|row| puts row_format%row}
 
     localhost.close
+  end
+
+  def self.localhost
+    @localhost ||= Net::Telnet::new("Host" => "localhost", "Port" => 11211, "Timeout" => 3)
+  end
+
+  def self.slabs
+    matches.inject([]) { |items, item| items << Hash[*['id','items'].zip(item).flatten]; items }
+  end
+
+  def self.matches
+    localhost.cmd("String" => "stats items", "Match" => /^END/).scan(/STAT items:(\d+):number (\d+)/)
   end
 end
