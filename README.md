@@ -29,6 +29,10 @@ The output should look like:
     gem build memkeys.gemspec 
     gem install memkeys-0.0.0.gem
 
+Or just clone the repo and run
+
+    ruby bin/memkeys
+
 ## TODO
 
 * Some kind of tests.

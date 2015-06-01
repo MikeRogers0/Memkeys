@@ -8,8 +8,7 @@ class Memkeys < Thor
   method_option :port, :aliases => "-p", :desc => "Specify a port"
   method_option :timeout, :aliases => "-t", :desc => "Specify a timeout"
   def list_keys
-    options = default_options.merge(options || {})
-    puts options[:host].inspect
+    @options = default_options.merge(options || {})
 
     headings = %w(id expires bytes cache_key)
     rows = []
@@ -39,7 +38,7 @@ class Memkeys < Thor
   end
 
   def localhost
-    @localhost ||= Net::Telnet::new("Host" => options[:host], "Port" => options[:port], "Timeout" => options[:timeout])
+    @localhost ||= Net::Telnet::new("Host" => @options[:host], "Port" => @options[:port], "Timeout" => @options[:timeout])
   end
 
   def slabs
