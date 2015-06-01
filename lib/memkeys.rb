@@ -5,6 +5,8 @@ class Memkeys < Thor
 
   desc "List Keys", "List Keys"
   method_option :host, :aliases => "-h", :desc => "Specify a host"
+  method_option :port, :aliases => "-p", :desc => "Specify a port"
+  method_option :timeout, :aliases => "-t", :desc => "Specify a timeout"
   def list_keys
     options = default_options.merge(options || {})
     puts options[:host].inspect
@@ -33,11 +35,11 @@ class Memkeys < Thor
 
   private
   def default_options
-    { host: "localhost" } 
+    { host: "localhost", port: 11211, timeout: 3 } 
   end
 
   def localhost
-    @localhost ||= Net::Telnet::new("Host" => "localhost", "Port" => 11211, "Timeout" => 3)
+    @localhost ||= Net::Telnet::new("Host" => options[:host], "Port" => options[:port], "Timeout" => options[:timeout])
   end
 
   def slabs

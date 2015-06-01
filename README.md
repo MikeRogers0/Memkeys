@@ -18,12 +18,24 @@ The output should look like:
     |      31 |    2015-06-02 02:03:23 +0200 |        80259 | views/home/index                                      |
     
 
-## How to build gem
+### Arguments 
+
+* `-h` The host 
+* `-p` The port 
+* `-t` The timeout
+
+## How to build & install gem
 
     gem build memkeys.gemspec 
     gem install memkeys-0.0.0.gem
 
+## TODO
+
+* Some kind of tests.
+* Publish
+
 ## Thanks
 
-Big thanks to [Ruby Co-Learning](http://www.meetup.com/opentechschool-berlin/events/219762691/), 
-Jose Pio [github](http://www.github.com/josetonyp)
+Big thanks to: 
+* [Ruby Co-Learning](http://www.meetup.com/opentechschool-berlin/events/219762691/)
+* Jose Pio [github](http://www.github.com/josetonyp)
