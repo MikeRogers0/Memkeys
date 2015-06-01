@@ -2,7 +2,6 @@ require 'net/telnet'
 require 'thor'
 
 class Memkeys < Thor
-
   desc "List Keys", "List Keys"
   method_option :host, :aliases => "-h", :desc => "Specify a host"
   method_option :port, :aliases => "-p", :desc => "Specify a port"

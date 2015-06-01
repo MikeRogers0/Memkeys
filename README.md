@@ -20,9 +20,9 @@ The output should look like:
 
 ### Arguments 
 
-* `-h` The host 
-* `-p` The port 
-* `-t` The timeout
+* `--host` The host 
+* `--port` The port 
+* `--timeout` The timeout
 
 ## How to build & install gem
 
