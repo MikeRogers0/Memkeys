@@ -26,8 +26,14 @@ The output should look like:
 
 ## How to build & install gem
 
+Build from source
+
     gem build memkeys.gemspec 
-    gem install memkeys-0.1.0.gem
+    gem install memkeys-0.1.1.gem
+
+or from rubygems
+
+    gem install memkeys
 
 Or just clone the repo and run
 
