@@ -6,12 +6,15 @@ Gem::Specification.new do |s|
   s.version     = Memkeys::VERSION
 
   s.date        = '2016-02-04'
-  s.summary     = "Memcache key lister"
-  s.description = "A simple hello world gem"
-  s.authors     = ["Mike Rogers "]
+  s.description = 'Lists keys currently listed in memcache'
+  s.summary     = s.description
+  s.authors     = ['Mike Rogers']
   s.email       = 'me@mikerogers.io'
-  s.homepage    = 'http://rubygems.org/gems/memkeys'
+  s.homepage    = 'https://github.com/mikerogers0/memkeys'
   s.license     = 'MIT'
+
+  s.required_ruby_version = '>= 2.3.0'
+  s.required_rubygems_version = ">= 2.5.1"
 
   s.require_paths = ["lib"]
   s.executables  = ["memkeys"]  
