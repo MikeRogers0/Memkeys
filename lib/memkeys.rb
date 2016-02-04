@@ -18,7 +18,7 @@ class Memkeys < Thor
     longest_key_len = 0
     slabs.each do |slab|
       localhost.cmd("String" => "stats cachedump #{slab['id']} #{slab['items']}", "Match" => /^END/) do |c|
-        matches = c.scan(/^ITEM (.+?) \[(\d+) b; (\d+) s\]$/).each do |key_data|
+        c.scan(/^ITEM (.+?) \[(\d+) b; (\d+) s\]$/).each do |key_data|
           cache_key, bytes, expires_time = key_data
           rows << [slab['id'], Time.at(expires_time.to_i), bytes, cache_key]
           longest_key_len = [longest_key_len,cache_key.length].max
