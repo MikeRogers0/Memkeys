@@ -20,14 +20,14 @@ The output should look like:
 
 ### Arguments 
 
-* `--host` The host 
-* `--port` The port 
-* `--timeout` The timeout
+* `--host` The host, defaults to `localhost`
+* `--port` The port, defaults to `11211`
+* `--timeout` The timeout, defaults to `3`
 
 ## How to build & install gem
 
     gem build memkeys.gemspec 
-    gem install memkeys-0.0.0.gem
+    gem install memkeys-0.1.0.gem
 
 Or just clone the repo and run
 

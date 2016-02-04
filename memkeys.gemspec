@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name        = 'memkeys'
   s.version     = Memkeys::VERSION
 
-  s.date        = '2015-06-01'
+  s.date        = '2016-02-04'
   s.summary     = "Memcache key lister"
   s.description = "A simple hello world gem"
   s.authors     = ["Mike Rogers "]
