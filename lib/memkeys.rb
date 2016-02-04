@@ -6,6 +6,9 @@ class Memkeys < Thor
   method_option :host, :aliases => "-h", :desc => "Specify a host"
   method_option :port, :aliases => "-p", :desc => "Specify a port"
   method_option :timeout, :aliases => "-t", :desc => "Specify a timeout"
+
+  default_task :list_keys
+
   def list_keys
     @options = default_options.merge(options || {})
 
@@ -29,7 +32,6 @@ class Memkeys < Thor
 
     localhost.close
   end
-  default_task :list_keys
 
   private
   def default_options

@@ -42,4 +42,4 @@ Or just clone the repo and run
 
 Big thanks to: 
 * [Ruby Co-Learning](http://www.meetup.com/opentechschool-berlin/events/219762691/)
-* Jose Pio [github](http://www.github.com/josetonyp)
+* Jose Pio [GitHub](http://www.github.com/josetonyp)
