@@ -42,7 +42,6 @@ Or just clone the repo and run
 ## TODO
 
 * Some kind of tests.
-* Publish
 
 ## Thanks
 
