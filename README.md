@@ -29,7 +29,7 @@ The output should look like:
 Build from source
 
     gem build memkeys.gemspec 
-    gem install memkeys-0.1.1.gem
+    gem install memkeys-0.1.2.gem
 
 or from rubygems
 
@@ -41,7 +41,7 @@ Or just clone the repo and run
 
 ## TODO
 
-* Some kind of tests.
+* Write tests, currently they do nothing.
 
 ## Thanks
 
