@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.executables  = ["memkeys"]  
   s.files        = `git ls-files`.split($\)
 
-  s.add_runtime_dependency "thor", "~> 0.19"
+  s.add_runtime_dependency "thor", ">= 0.19", "< 2.0"
   s.add_runtime_dependency "net-telnet", "~> 0.1"
   s.add_development_dependency "rspec", "~> 3.4"
 end
